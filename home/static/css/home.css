@@ -1,0 +1,55 @@
+#navbar {
+    background-color: indianred;
+    border-bottom-style: solid;
+    border-color: black;
+    border-width: 2px;
+    z-index: 999;
+}
+
+a {
+    color: white;
+}
+
+h1 {
+    text-align:center;
+}
+
+.main {
+    margin-top:1%;
+}
+
+.col-md-5 {
+    margin: auto;
+    width: 50%;
+}
+
+div.col-md-10 {
+    margin: auto;
+    width: 75%;
+}
+
+a.btn {
+    background-color: royalblue;
+}
+
+h5 {
+    display: inline-block;
+}
+
+h5.pts {
+    float: right;
+}
+
+body {
+    background-color: oldlace;
+}
+
+.sticky + .container {
+    padding-top: 60px
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}

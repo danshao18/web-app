@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+<div class="main">
+    <h1>Today's Games:</h1>
+    {% for game in home %}
+        <div class="col-md-5">
+            <div class="card mb-2">
+                <div class="card-body">
+                    <h5>{{ game.winner }}</h5> <h5 class="pts">{{ game.wpts }}</h5>
+                    <p></p>
+                    <h5>{{ game.loser }}</h5> <h5 class="pts">{{ game.lpts }}</h5>
+                    <p></p>
+                    <a href="{% url 'home_detail' game.pk %}" class="btn btn-primary">
+                        Game Thread
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

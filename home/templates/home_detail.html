@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_content %}
+<h1>Game: {{ home.winner }} vs {{ home.loser }}</h1>
+<div class="row">
+    <div class="col-md-5">
+        <p></p>
+        <p><b>Score:</b></p>
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5>{{ home.winner }}</h5> <h5 class="pts">{{ home.wpts }}</h5>
+                <p></p>
+                <h5>{{ home.loser }}</h5> <h5 class="pts">{{ home.lpts }}</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-10">
+    <h3>Leave a comment:</h3>
+    <form action="./{{ home.pk }}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.author }}
+        </div>
+        <div class="form-group">
+            {{ form.body }}
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <h3>Comments:</h3>
+    {% for comment in comments %}
+    <p>
+        On {{comment.created_on.date }}&nbsp;
+        <b>{{ comment.author }}</b> wrote:
+    </p>
+    <p>{{ comment.body }}</p>
+    <hr>
+    {% endfor %}
+</div>
+
+{% endblock %}
